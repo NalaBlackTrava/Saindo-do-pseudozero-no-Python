@@ -1,10 +1,16 @@
-#Passo a passo de solução
+from ast import If
+from msilib.schema import Condition
+import pandas as pd
 
-#Abrir os 6 arquivos em excel
+lista_meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho']
 
-#Para cada arquivo:
+for mes in lista_meses:
+    print(mes)
+    tabela_vendas = pd.read_excel (f'{mes}.xlsx')
+    print (tabela_vendas)
+    If (tabela_vendas:['Vendas']> 550000).any():
+        print('Uffas, agora tu pode viajar, seu chefe financiou um novo ape na Barra')
 
-#Verificar se algum valor na coluna B daquele arquivo é maior que 55k
 
 #If X > 55k --> envia um SMS com o nome, o mês e as vendas delu
 
